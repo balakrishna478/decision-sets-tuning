@@ -1,0 +1,491 @@
+# question: Do the tuning laws hold for complex uniform-linear arrays, for all three trackers?
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0001 --sched const --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0001 --sched const --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0001 --seeds 0-4 --null --total-timesteps 5333335
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0001 --seeds 5-9 --null --total-timesteps 5333335
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0002 --sched const --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0002 --sched const --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0002 --seeds 0-4 --null --total-timesteps 2666665
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0002 --seeds 5-9 --null --total-timesteps 2666665
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0004 --sched const --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0004 --sched const --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0004 --seeds 0-4 --null --total-timesteps 1333335
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0004 --seeds 5-9 --null --total-timesteps 1333335
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0008 --sched const --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0008 --sched const --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0008 --seeds 0-4 --null --total-timesteps 666665
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0008 --seeds 5-9 --null --total-timesteps 666665
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.012 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.017 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.024 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.0339 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.048 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.0679 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.096 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.1358 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.192 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.2715 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.384 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.5431 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 0.768 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 1.0861 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0016 --sched const --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --eta 1.536 --exp N4 --method oja --p 0.0016 --sched const --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.001 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.001414 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.002 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.002828 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.004 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.005657 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.008 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.011314 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.016 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.022627 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.032 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.045255 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.064 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.09051 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.128 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.181019 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.256 --exp N4 --method ewcov --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.999 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.998586 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.998 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.997172 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.996 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.994343 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.992 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.988686 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.984 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.977373 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.968 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.954745 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.936 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.90949 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.872 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.818981 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0016 --seeds 0-4 --null --total-timesteps 333335
+python revsim.py cell --array ula --beta 0.744 --exp N4 --method past --p 0.0016 --seeds 5-9 --null --total-timesteps 333335

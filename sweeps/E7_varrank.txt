@@ -1,0 +1,8 @@
+# question: Under variable occupancy, does rank-adaptive scoring remove the r=5 collisions that fixed widths leave?
+python revsim.py cell --eta 0.096 --exp E7 --kind var --kw 2 --method oja --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta 0.096 --exp E7 --kind var --kw 3 --method oja --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta 0.096 --exp E7 --kind var --kw 4 --method oja --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta 0.096 --exp E7 --kind var --kw 5 --method oja --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta 0.096 --exp E7 --kind var --kw 5 --method oja --rankmode oracle --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta 0.096 --exp E7 --kind var --kw 5 --method oja --rankmode est --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.1 --exp E7 --kind var --method bf --seeds 0-19 --total-timesteps 9600000

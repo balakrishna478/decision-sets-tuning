@@ -1,0 +1,58 @@
+# question: Does reset-on-detection help or hurt on reward and tracking error once the step is tuned, floored, and the detector has delay and false alarms?
+python revsim.py cell --eta0 0.5 --exp E2 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 1.0 --exp E2 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 2.0 --exp E2 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 4.0 --exp E2 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.02 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.096 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.192 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 0 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 0 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 5e-05 --sched reset --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --eta0 0.5 --exp E2 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 1.0 --exp E2 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 2.0 --exp E2 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 4.0 --exp E2 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.02 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.096 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.192 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 0 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 0 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0002 --sched reset --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --eta0 0.5 --exp E2 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --eta0 1.0 --exp E2 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --eta0 2.0 --exp E2 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --eta0 4.0 --exp E2 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.02 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.096 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --eta0 2.0 --exp E2 --floor 0.192 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 0 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 0 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 25 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 100 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.0 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.0001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --delay 400 --eta0 2.0 --exp E2 --fa 0.001 --floor 0.048 --method oja --p 0.0008 --sched reset --seeds 0-19 --total-timesteps 2400000

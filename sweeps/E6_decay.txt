@@ -1,0 +1,7 @@
+# question: Does the decaying step eta0/t fail for every eta0, as the recovery-time argument predicts?
+python revsim.py cell --eta0 1.0 --exp E6 --method oja --p 0.0002 --sched decay --sin-every 10 --seeds 0-13 --total-timesteps 1680000
+python revsim.py cell --eta0 2.0 --exp E6 --method oja --p 0.0002 --sched decay --sin-every 10 --seeds 0-13 --total-timesteps 1680000
+python revsim.py cell --eta0 5.0 --exp E6 --method oja --p 0.0002 --sched decay --sin-every 10 --seeds 0-13 --total-timesteps 1680000
+python revsim.py cell --eta0 10.0 --exp E6 --method oja --p 0.0002 --sched decay --sin-every 10 --seeds 0-13 --total-timesteps 1680000
+python revsim.py cell --eta0 20.0 --exp E6 --method oja --p 0.0002 --sched decay --sin-every 10 --seeds 0-13 --total-timesteps 1680000
+python revsim.py cell --eta 0.02 --exp E6 --method oja --p 0.0002 --sched const --sin-every 10 --seeds 0-13 --total-timesteps 1680000

@@ -1,0 +1,37 @@
+# question: Do simpler trackers (beamformer power EWMA, PAST, EW covariance) match or beat the best constant-step Oja on reward gap?
+python revsim.py cell --beta 0.01 --exp E1 --method bf --p 5e-05 --sin-every 0 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.03 --exp E1 --method bf --p 5e-05 --sin-every 0 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.1 --exp E1 --method bf --p 5e-05 --sin-every 0 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.3 --exp E1 --method bf --p 5e-05 --sin-every 0 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.9 --exp E1 --method past --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.97 --exp E1 --method past --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.99 --exp E1 --method past --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.997 --exp E1 --method past --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.003 --exp E1 --method ewcov --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.01 --exp E1 --method ewcov --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.03 --exp E1 --method ewcov --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.1 --exp E1 --method ewcov --p 5e-05 --seeds 0-19 --total-timesteps 24000000
+python revsim.py cell --beta 0.01 --exp E1 --method bf --p 0.0002 --sin-every 0 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.03 --exp E1 --method bf --p 0.0002 --sin-every 0 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.1 --exp E1 --method bf --p 0.0002 --sin-every 0 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.3 --exp E1 --method bf --p 0.0002 --sin-every 0 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.9 --exp E1 --method past --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.97 --exp E1 --method past --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.99 --exp E1 --method past --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.997 --exp E1 --method past --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.003 --exp E1 --method ewcov --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.01 --exp E1 --method ewcov --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.03 --exp E1 --method ewcov --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.1 --exp E1 --method ewcov --p 0.0002 --seeds 0-19 --total-timesteps 9600000
+python revsim.py cell --beta 0.01 --exp E1 --method bf --p 0.0008 --sin-every 0 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.03 --exp E1 --method bf --p 0.0008 --sin-every 0 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.1 --exp E1 --method bf --p 0.0008 --sin-every 0 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.3 --exp E1 --method bf --p 0.0008 --sin-every 0 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.9 --exp E1 --method past --p 0.0008 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.97 --exp E1 --method past --p 0.0008 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.99 --exp E1 --method past --p 0.0008 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.997 --exp E1 --method past --p 0.0008 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.003 --exp E1 --method ewcov --p 0.0008 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.01 --exp E1 --method ewcov --p 0.0008 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.03 --exp E1 --method ewcov --p 0.0008 --seeds 0-19 --total-timesteps 2400000
+python revsim.py cell --beta 0.1 --exp E1 --method ewcov --p 0.0008 --seeds 0-19 --total-timesteps 2400000

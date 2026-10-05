@@ -1,0 +1,21 @@
+# question: How long does the tracker sit above the collision onset after a swap, and does the hitting-time rate match the spectral prediction?
+python revsim.py cell --driver sample --eta 0.024 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver exact --eta 0.024 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver sample --eta 0.048 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver exact --eta 0.048 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver sample --eta 0.096 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver exact --eta 0.096 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver sample --eta 0.192 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver exact --eta 0.192 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver sample --eta 0.384 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver exact --eta 0.384 --exp E5 --method oja --p 0.0002 --sched const --seeds 0-9 --trace --total-timesteps 4800000
+python revsim.py cell --driver sample --eta 0.024 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver exact --eta 0.024 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver sample --eta 0.048 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver exact --eta 0.048 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver sample --eta 0.096 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver exact --eta 0.096 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver sample --eta 0.192 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver exact --eta 0.192 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver sample --eta 0.384 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000
+python revsim.py cell --driver exact --eta 0.384 --exp E5 --method oja --p 0.0008 --sched const --seeds 0-9 --trace --total-timesteps 1200000

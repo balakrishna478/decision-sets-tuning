@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper."
+title: "The Decision Sets the Tuning: Step-Size Laws for Subspace Trackers Under Abrupt Spectrum Changes"
+authors:
+  - given-names: "Bala Krishna Reddy"
+    family-names: "D"
+    affiliation: "Indian Institute of Technology Tirupati"
+  - given-names: "Ajin George"
+    family-names: "Joseph"
+    affiliation: "Indian Institute of Technology Tirupati"
+license: MIT
+repository-code: "https://github.com/balakrishna478/decision-sets-tuning"
+date-released: "2026-10-05"

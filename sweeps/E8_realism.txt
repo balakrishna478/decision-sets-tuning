@@ -1,0 +1,121 @@
+# question: Across array type, SNR and M, is there any regime where Oja tracking beats the beamformer baseline?
+python revsim.py cell --M 8 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array gauss --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 2.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 4.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 8.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 8 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 16 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.048 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.192 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --eta 0.384 --exp E8 --method oja --p 0.0002 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.03 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
+python revsim.py cell --M 32 --array ula --beta 0.1 --exp E8 --method bf --p 0.0002 --sin-every 0 --snr 16.0 --seeds 0-9 --total-timesteps 4800000
