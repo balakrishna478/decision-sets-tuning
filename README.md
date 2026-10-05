@@ -1,5 +1,7 @@
 # The Decision Sets the Tuning
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23160427.svg)](https://doi.org/10.5281/zenodo.23160427)
+
 Code, experiment definitions and per-run results for
 
 > Bala Krishna Reddy D and Ajin George Joseph, **"The Decision Sets the Tuning: Step-Size Laws for
@@ -75,4 +77,5 @@ Code is released under the MIT licence (`LICENSE`); see `CITATION.cff` for how t
 The simulation and analysis code was developed with the assistance of Claude (Anthropic); the authors
 checked every result reported in the paper.
 
+Archived version 1.0.0: https://doi.org/10.5281/zenodo.23160427  
 Repository: https://github.com/balakrishna478/decision-sets-tuning

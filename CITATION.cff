@@ -8,6 +8,8 @@ authors:
   - given-names: "Ajin George"
     family-names: "Joseph"
     affiliation: "Indian Institute of Technology Tirupati"
+version: "1.0.0"
+doi: "10.5281/zenodo.23160427"
 license: MIT
 repository-code: "https://github.com/balakrishna478/decision-sets-tuning"
 date-released: "2026-10-05"
