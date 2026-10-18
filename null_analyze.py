@@ -35,7 +35,7 @@ def load(resdir, pmin, pmax):
                 r = json.loads(line)
             except Exception:
                 continue
-            if r.get("exp") not in ("N1", "N2", "N3", "N4", "N5", "N6") or "error" in r or r["id"] in seen:
+            if r.get("exp") not in ("N1", "N2", "N3", "N4", "N5", "N6", "N7") or "error" in r or r["id"] in seen:
                 continue
             if not (pmin <= r["p"] <= pmax):
                 continue
@@ -44,7 +44,8 @@ def load(resdir, pmin, pmax):
             r["step"] = r["eta"] if m == "oja" else (round(1 - r["beta"], 6) if m == "past" else r["beta"])
             r["group"] = f"{m}:{r.get('M', 16)}" + ("" if r.get("array", "gauss") == "gauss" else ":ula") \
                 + ("" if r.get("snr", 8.0) == 8.0 else f":snr{r['snr']:g}") \
-                + ("" if r.get("k", 2) == 2 else f":k{r['k']}")
+                + ("" if r.get("k", 2) == 2 else f":k{r['k']}") \
+                + (f":var{r.get('kw', 2)}" if r.get("kind") == "var" else "")
             rows.append(r)
     return rows
 

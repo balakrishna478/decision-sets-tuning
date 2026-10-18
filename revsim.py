@@ -42,6 +42,16 @@ def sin_theta(A, B):
         else float("nan")
 
 
+def sin_cover(U, B):
+    """Largest principal-angle sine from the occupied subspace U (r columns) into span(B)
+    (kw >= r columns): 0 when B contains U. Used as the accuracy cost under variable rank."""
+    r = U.shape[1]
+    if r == 0 or r > B.shape[1]:
+        return float("nan")
+    sv = np.linalg.svd(U.conj().T @ B, compute_uv=False)
+    return float(np.sqrt(np.clip(1 - sv.min() ** 2, 0, None)))
+
+
 def orth(S):
     if S.shape[1] == 0:
         return np.zeros((S.shape[0], 0), dtype=S.dtype)
@@ -237,7 +247,14 @@ def run(job, outdir=None, progress=None):
     p, T, seed, array = j.get("p", 2e-4), j["T"], j["seed"], j.get("array", "gauss")
     method = j["method"]
     off = 7 if kind == "swap" else 3
-    env = Env(kind, M, K, k, p, snr, seed + off, array)
+    vr = {}
+    if kind == "var" and "p" in j:
+        # N7: independent on/off users with mean occupancy k of K and total change probability p
+        # per slot. Detailed balance: p01 = c*pi1, p10 = c*pi0, with K * 2c*pi0*pi1 = p.
+        # (E7 has no "p" key and keeps the original fixed rates.)
+        pi1 = k / K; pi0 = 1 - pi1; c = p / (2 * K * pi0 * pi1)
+        vr = dict(p01=c * pi1, p10=c * pi0)
+    env = Env(kind, M, K, k, p, snr, seed + off, array, **vr)
     cplx = env.cplx
     kw = j.get("kw", k)
     kappa = snr * kw + M
@@ -246,12 +263,11 @@ def run(job, outdir=None, progress=None):
     sin_every = j.get("sin_every", 1 if kind == "swap" else 0)
     gmin, gmean = margin_stats(env.S, k) if kind == "swap" else (float("nan"),) * 2
 
-    rankmode = None
+    rankmode = j.get("rankmode") if method != "bf" else None   # None | 'oracle' | 'est'
     if method == "oja":
         trk = Oja(M, kw, kappa, rng, cplx, eta=j.get("eta", 0.05), sched=j.get("sched", "const"),
                   eta0=j.get("eta0", 2.0), floor=j.get("floor", 0.0), delay=j.get("delay", 0),
                   fa=j.get("fa", 0.0), det_seed=seed + 1_000_003, driver=j.get("driver", "sample"))
-        rankmode = j.get("rankmode")            # None | 'oracle' | 'est'  (variable rank)
     elif method == "past":
         trk = PAST(M, kw, rng, cplx, beta=j["beta"])
     elif method == "ewcov":
@@ -297,6 +313,7 @@ def run(job, outdir=None, progress=None):
             B = None
         else:
             B = trk.basis()
+            Bfull = B
             if rankmode:
                 colpow = 0.99 * colpow + 0.01 * np.abs(B.conj().T @ y) ** 2
                 order = np.argsort(colpow)[::-1]
@@ -322,7 +339,11 @@ def run(job, outdir=None, progress=None):
         coll += int(hit)
         if kind == "var":
             d = byrank.setdefault(len(act), [0, 0]); d[0] += 1; d[1] += int(hit)
-        if sin_every and B is not None and (n_eval % sin_every == 0):
+        if kind == "var" and sin_every and B is not None and (n_eval % sin_every == 0):
+            s = sin_cover(env.subspace(), Bfull)
+            if np.isfinite(s):
+                sins.append(s); above_c += int(s > 0.95)
+        elif sin_every and B is not None and (n_eval % sin_every == 0):
             s = sin_theta(B, env.subspace())
             sins.append(s)
             above_g += int(s > gmin); above_c += int(s > 0.95)
@@ -531,6 +552,30 @@ def build_n6_jobs(nseeds=10, scale=1.0):
     return J
 
 
+# N7: variable-rank occupancy (independent on/off users, mean 2 of 6 active, total change
+# probability p per slot), null-steering against a fixed width kw = 4 (rank exceeds 4 in ~2% of
+# slots). Accuracy is the coverage error sin_cover. Oja, PAST and EW covariance, five rates.
+N7_ETAS = [0.006, 0.0085] + N1_ETAS + [2.1722, 3.072]                    # 0.006 .. 3.072, x sqrt2
+N7_MUS = [0.00025, 0.000354] + N2_MUS                                    # 0.00025 .. 0.512, x sqrt2
+
+
+def build_n7_jobs(nseeds=10, scale=1.0):
+    J = []
+    T = lambda p: int(round(80 / p / 0.75 * scale))
+    base = dict(exp="N7", kind="var", kw=4, null=True, sin_every=1)
+    for p in N45_RATES:
+        for s in range(nseeds):
+            for e in N7_ETAS:
+                J.append(dict(base, method="oja", sched="const", eta=e, p=p, T=T(p), burn=T(p) // 4,
+                              seed=s))
+            for m in ("ewcov", "past"):
+                for mu in N7_MUS:
+                    J.append(dict(base, p=p, T=T(p), burn=T(p) // 4, seed=s, **_mu_job(m, mu)))
+    for i, x in enumerate(J):
+        x["id"] = f"N7_{i:05d}"; x["cost"] = x["T"] * (1.5 if x["method"] == "ewcov" else 1.0)
+    return J
+
+
 # ------------------------------------------------------------------ geometry dump
 def swap_geometry(S, k, snr, ngrid=400):
     """Per swap triple: initial angle theta0 and the collision indicator along the
@@ -626,6 +671,7 @@ def cell(a):
 
 
 QUESTIONS = {
+    "N7": "Do the tuning laws hold under variable-rank occupancy (independent on/off users, births and departures), for all three trackers?",
     "N6": "Do the tuning laws and the theory's predictions hold with three active users (k = 3)?",
     "N4": "Do the tuning laws hold for complex uniform-linear arrays, for all three trackers?",
     "N5": "Are the exponents independent of SNR (4 and 16), as the linearised theory predicts?",
@@ -641,7 +687,7 @@ QUESTIONS = {
     "E8": "Across array type, SNR and M, is there any regime where Oja tracking beats the beamformer baseline?",
 }
 BOOL_FLAGS = ("trace", "null")
-NAMES = dict(N6="N6_k3", N4="N4_ula", N5="N5_snr", N2="N2_trackers", N3="N3_scale", N1="N1_tuning_law", E1="E1_baselines", E2="E2_resets", E3="E3_stepsweep", E5="E5_excursions",
+NAMES = dict(N7="N7_varrank", N6="N6_k3", N4="N4_ula", N5="N5_snr", N2="N2_trackers", N3="N3_scale", N1="N1_tuning_law", E1="E1_baselines", E2="E2_resets", E3="E3_stepsweep", E5="E5_excursions",
              E6="E6_decay", E7="E7_varrank", E8="E8_realism")
 
 
@@ -748,7 +794,7 @@ if __name__ == "__main__":
     sw = sub.add_parser("sweeps"); sw.add_argument("--seeds", type=int, default=20)
     sw.add_argument("--scale", type=float, default=1.0)
     sw.add_argument("--out", default="sweeps")
-    sw.add_argument("--set", choices=["revision", "null", "n2", "n45", "n6"], default="revision")
+    sw.add_argument("--set", choices=["revision", "null", "n2", "n45", "n6", "n7"], default="revision")
     sw.add_argument("--per-line", dest="per_line", type=int, default=None)
     g = sub.add_parser("geometry"); g.add_argument("--seeds", type=int, default=20)
     g.add_argument("--out", default="geometry.json")
@@ -765,7 +811,9 @@ if __name__ == "__main__":
     elif a.cmd == "cell":
         cell(a)
     elif a.cmd == "sweeps":
-        if a.set == "n6":
+        if a.set == "n7":
+            write_sweeps(build_n7_jobs(a.seeds if a.seeds != 20 else 10, a.scale), a.out, a.per_line or 5)
+        elif a.set == "n6":
             write_sweeps(build_n6_jobs(a.seeds if a.seeds != 20 else 10, a.scale), a.out, a.per_line or 5)
         elif a.set == "n45":
             write_sweeps(build_n45_jobs(a.seeds if a.seeds != 20 else 10, a.scale), a.out, a.per_line or 5)

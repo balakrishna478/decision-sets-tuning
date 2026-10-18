@@ -55,7 +55,7 @@ the simulations.
 
 ## Rerunning the simulations
 
-Every sweep file can be regenerated with `python3 revsim.py sweeps --set {revision,null,n2,n45,n6}`.
+Every sweep file can be regenerated with `python3 revsim.py sweeps --set {revision,null,n2,n45,n6,n7}`.
 Run each line as a separate job with `RUN_DIR` set to an empty folder; the line writes
 `results.jsonl` there. Any job scheduler works. The full set is about 300 core-hours.
 
@@ -79,3 +79,15 @@ checked every result reported in the paper.
 
 Archived version 1.0.0: https://doi.org/10.5281/zenodo.23160427  
 Repository: https://github.com/balakrishna478/decision-sets-tuning
+
+## N7: variable-rank occupancy
+
+`sweeps/N7_varrank.txt` (`python3 revsim.py sweeps --set n7`) tests the tuning laws when users
+arrive and depart independently instead of swapping. Each of the K = 6 users switches on and off as
+a two-state Markov chain with mean occupancy 2 and total change probability p per slot
+(p01 = p/8, p10 = p/4). Trackers keep a fixed width kw = 4 and null-steer against all four
+directions; rank exceeds 4 in about 2% of slots. Because occupancy and tracked width differ,
+`sin_mean` here is the coverage error: the largest principal-angle sine from the occupied subspace
+into the tracked one. E7 (no `--p`) keeps its original fixed rates and reproduces exactly.
+
+Analyse with `python3 null_analyze.py --max-p 2e-3`; N7 results appear as groups ending in `:var4`.
