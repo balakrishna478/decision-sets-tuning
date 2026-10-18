@@ -35,7 +35,7 @@ def load(resdir, pmin, pmax):
                 r = json.loads(line)
             except Exception:
                 continue
-            if r.get("exp") not in ("N1", "N2", "N3", "N4", "N5", "N6", "N7") or "error" in r or r["id"] in seen:
+            if r.get("exp") not in ("N1", "N2", "N3", "N4", "N5", "N6", "N7", "N7b") or "error" in r or r["id"] in seen:
                 continue
             if not (pmin <= r["p"] <= pmax):
                 continue

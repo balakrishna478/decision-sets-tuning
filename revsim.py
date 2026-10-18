@@ -291,6 +291,8 @@ def run(job, outdir=None, progress=None):
         h = h / np.linalg.norm(h)
         GAMS = (0.01, 0.03, 0.1)   # interference after a swap is ~1/(M-k) on average, so 0.3 never trips
         nI, ngain, nout = 0.0, 0.0, np.zeros(len(GAMS))
+        # variable rank: the same costs on slots with at most kw active users (all nullable)
+        nI_rep, nout_rep, n_rep = 0.0, np.zeros(len(GAMS)), 0
     tr_sin, tr_col, tr_jump = [], [], []
     t0 = time.time()
 
@@ -326,6 +328,8 @@ def run(job, outdir=None, progress=None):
             w = w / np.linalg.norm(w)
             It = float(np.sum(np.abs(SH[act] @ w) ** 2)) if act else 0.0
             nI += It; nout += np.array([It > g for g in GAMS]); ngain += float(abs(h.conj() @ w) ** 2)
+            if kind == "var" and len(act) <= kw:
+                nI_rep += It; nout_rep += np.array([It > g for g in GAMS]); n_rep += 1
         c = int(np.argmin(sc))
         hit = c in act
         key = tuple(act)
@@ -365,6 +369,9 @@ def run(job, outdir=None, progress=None):
     if null:
         res.update(I_mean=nI / n_eval, gain_mean=ngain / n_eval,
                    **{f"out_{g}": float(o / n_eval) for g, o in zip(GAMS, nout)})
+        if kind == "var" and n_rep:
+            res.update(I_mean_rep=nI_rep / n_rep, n_rep=n_rep,
+                       **{f"out_{g}_rep": float(o / n_rep) for g, o in zip(GAMS, nout_rep)})
     if byrank:
         res["coll_by_rank"] = {str(rk): v[1] / v[0] for rk, v in sorted(byrank.items())}
         res["slots_by_rank"] = {str(rk): v[0] for rk, v in sorted(byrank.items())}
@@ -559,10 +566,12 @@ N7_ETAS = [0.006, 0.0085] + N1_ETAS + [2.1722, 3.072]                    # 0.006
 N7_MUS = [0.00025, 0.000354] + N2_MUS                                    # 0.00025 .. 0.512, x sqrt2
 
 
-def build_n7_jobs(nseeds=10, scale=1.0):
+def build_n7_jobs(nseeds=10, scale=1.0, exp="N7"):
+    """exp='N7b' reruns the same grid and seeds (identical trajectories) with accuracy off,
+    to record the null-steering costs on slots with at most kw active users."""
     J = []
     T = lambda p: int(round(80 / p / 0.75 * scale))
-    base = dict(exp="N7", kind="var", kw=4, null=True, sin_every=1)
+    base = dict(exp=exp, kind="var", kw=4, null=True, sin_every=1 if exp == "N7" else 0)
     for p in N45_RATES:
         for s in range(nseeds):
             for e in N7_ETAS:
@@ -574,7 +583,7 @@ def build_n7_jobs(nseeds=10, scale=1.0):
                 for mu in (N7_MUS if m == "ewcov" else [x for x in N7_MUS if x <= 0.256]):
                     J.append(dict(base, p=p, T=T(p), burn=T(p) // 4, seed=s, **_mu_job(m, mu)))
     for i, x in enumerate(J):
-        x["id"] = f"N7_{i:05d}"; x["cost"] = x["T"] * (1.5 if x["method"] == "ewcov" else 1.0)
+        x["id"] = f"{exp}_{i:05d}"; x["cost"] = x["T"] * (1.5 if x["method"] == "ewcov" else 1.0)
     return J
 
 
@@ -673,6 +682,7 @@ def cell(a):
 
 
 QUESTIONS = {
+    "N7b": "Under variable rank, where are the outage optima on slots the tracker can fully null (at most kw active users)?",
     "N7": "Do the tuning laws hold under variable-rank occupancy (independent on/off users, births and departures), for all three trackers?",
     "N6": "Do the tuning laws and the theory's predictions hold with three active users (k = 3)?",
     "N4": "Do the tuning laws hold for complex uniform-linear arrays, for all three trackers?",
@@ -689,7 +699,7 @@ QUESTIONS = {
     "E8": "Across array type, SNR and M, is there any regime where Oja tracking beats the beamformer baseline?",
 }
 BOOL_FLAGS = ("trace", "null")
-NAMES = dict(N7="N7_varrank", N6="N6_k3", N4="N4_ula", N5="N5_snr", N2="N2_trackers", N3="N3_scale", N1="N1_tuning_law", E1="E1_baselines", E2="E2_resets", E3="E3_stepsweep", E5="E5_excursions",
+NAMES = dict(N7b="N7b_varrank_rep", N7="N7_varrank", N6="N6_k3", N4="N4_ula", N5="N5_snr", N2="N2_trackers", N3="N3_scale", N1="N1_tuning_law", E1="E1_baselines", E2="E2_resets", E3="E3_stepsweep", E5="E5_excursions",
              E6="E6_decay", E7="E7_varrank", E8="E8_realism")
 
 
@@ -796,7 +806,7 @@ if __name__ == "__main__":
     sw = sub.add_parser("sweeps"); sw.add_argument("--seeds", type=int, default=20)
     sw.add_argument("--scale", type=float, default=1.0)
     sw.add_argument("--out", default="sweeps")
-    sw.add_argument("--set", choices=["revision", "null", "n2", "n45", "n6", "n7"], default="revision")
+    sw.add_argument("--set", choices=["revision", "null", "n2", "n45", "n6", "n7", "n7b"], default="revision")
     sw.add_argument("--per-line", dest="per_line", type=int, default=None)
     g = sub.add_parser("geometry"); g.add_argument("--seeds", type=int, default=20)
     g.add_argument("--out", default="geometry.json")
@@ -813,7 +823,10 @@ if __name__ == "__main__":
     elif a.cmd == "cell":
         cell(a)
     elif a.cmd == "sweeps":
-        if a.set == "n7":
+        if a.set == "n7b":
+            write_sweeps(build_n7_jobs(a.seeds if a.seeds != 20 else 10, a.scale, exp="N7b"), a.out,
+                         a.per_line or 5)
+        elif a.set == "n7":
             write_sweeps(build_n7_jobs(a.seeds if a.seeds != 20 else 10, a.scale), a.out, a.per_line or 5)
         elif a.set == "n6":
             write_sweeps(build_n6_jobs(a.seeds if a.seeds != 20 else 10, a.scale), a.out, a.per_line or 5)
