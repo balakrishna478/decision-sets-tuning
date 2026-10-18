@@ -91,3 +91,7 @@ directions; rank exceeds 4 in about 2% of slots. Because occupancy and tracked w
 into the tracked one. E7 (no `--p`) keeps its original fixed rates and reproduces exactly.
 
 Analyse with `python3 null_analyze.py --max-p 2e-3`; N7 results appear as groups ending in `:var4`.
+
+Selection under variable rank is scored on slots with at most four active users
+(`python3 n7_selection.py results/ n7_rep/`, then `python3 null_analyze.py n7_rep --max-p 2e-3`):
+in the remaining slots collisions are partly unavoidable whatever the step.
