@@ -569,7 +569,9 @@ def build_n7_jobs(nseeds=10, scale=1.0):
                 J.append(dict(base, method="oja", sched="const", eta=e, p=p, T=T(p), burn=T(p) // 4,
                               seed=s))
             for m in ("ewcov", "past"):
-                for mu in N7_MUS:
+                # PAST diverges for mu > 0.256 here: with kw = 4 and ~2 active users, its inverse
+                # correlation matrix blows up on the noise-only columns (pilot, p = 1.6e-3).
+                for mu in (N7_MUS if m == "ewcov" else [x for x in N7_MUS if x <= 0.256]):
                     J.append(dict(base, p=p, T=T(p), burn=T(p) // 4, seed=s, **_mu_job(m, mu)))
     for i, x in enumerate(J):
         x["id"] = f"N7_{i:05d}"; x["cost"] = x["T"] * (1.5 if x["method"] == "ewcov" else 1.0)

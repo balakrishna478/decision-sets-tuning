@@ -125,10 +125,6 @@ python revsim.py cell --beta 0.818981 --burn 266666 --exp N7 --kind var --kw 4 -
 python revsim.py cell --beta 0.818981 --burn 266666 --exp N7 --kind var --kw 4 --method past --p 0.0001 --sin-every 1 --seeds 5-9 --null --total-timesteps 5333335
 python revsim.py cell --beta 0.744 --burn 266666 --exp N7 --kind var --kw 4 --method past --p 0.0001 --sin-every 1 --seeds 0-4 --null --total-timesteps 5333335
 python revsim.py cell --beta 0.744 --burn 266666 --exp N7 --kind var --kw 4 --method past --p 0.0001 --sin-every 1 --seeds 5-9 --null --total-timesteps 5333335
-python revsim.py cell --beta 0.637961 --burn 266666 --exp N7 --kind var --kw 4 --method past --p 0.0001 --sin-every 1 --seeds 0-4 --null --total-timesteps 5333335
-python revsim.py cell --beta 0.637961 --burn 266666 --exp N7 --kind var --kw 4 --method past --p 0.0001 --sin-every 1 --seeds 5-9 --null --total-timesteps 5333335
-python revsim.py cell --beta 0.488 --burn 266666 --exp N7 --kind var --kw 4 --method past --p 0.0001 --sin-every 1 --seeds 0-4 --null --total-timesteps 5333335
-python revsim.py cell --beta 0.488 --burn 266666 --exp N7 --kind var --kw 4 --method past --p 0.0001 --sin-every 1 --seeds 5-9 --null --total-timesteps 5333335
 python revsim.py cell --burn 133333 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0002 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 2666665
 python revsim.py cell --burn 133333 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0002 --sched const --sin-every 1 --seeds 5-9 --null --total-timesteps 2666665
 python revsim.py cell --burn 133333 --eta 0.0085 --exp N7 --kind var --kw 4 --method oja --p 0.0002 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 2666665
@@ -255,10 +251,6 @@ python revsim.py cell --beta 0.818981 --burn 133333 --exp N7 --kind var --kw 4 -
 python revsim.py cell --beta 0.818981 --burn 133333 --exp N7 --kind var --kw 4 --method past --p 0.0002 --sin-every 1 --seeds 5-9 --null --total-timesteps 2666665
 python revsim.py cell --beta 0.744 --burn 133333 --exp N7 --kind var --kw 4 --method past --p 0.0002 --sin-every 1 --seeds 0-4 --null --total-timesteps 2666665
 python revsim.py cell --beta 0.744 --burn 133333 --exp N7 --kind var --kw 4 --method past --p 0.0002 --sin-every 1 --seeds 5-9 --null --total-timesteps 2666665
-python revsim.py cell --beta 0.637961 --burn 133333 --exp N7 --kind var --kw 4 --method past --p 0.0002 --sin-every 1 --seeds 0-4 --null --total-timesteps 2666665
-python revsim.py cell --beta 0.637961 --burn 133333 --exp N7 --kind var --kw 4 --method past --p 0.0002 --sin-every 1 --seeds 5-9 --null --total-timesteps 2666665
-python revsim.py cell --beta 0.488 --burn 133333 --exp N7 --kind var --kw 4 --method past --p 0.0002 --sin-every 1 --seeds 0-4 --null --total-timesteps 2666665
-python revsim.py cell --beta 0.488 --burn 133333 --exp N7 --kind var --kw 4 --method past --p 0.0002 --sin-every 1 --seeds 5-9 --null --total-timesteps 2666665
 python revsim.py cell --burn 66666 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0004 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 1333335
 python revsim.py cell --burn 66666 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0004 --sched const --sin-every 1 --seeds 5-9 --null --total-timesteps 1333335
 python revsim.py cell --burn 66666 --eta 0.0085 --exp N7 --kind var --kw 4 --method oja --p 0.0004 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 1333335
@@ -385,10 +377,6 @@ python revsim.py cell --beta 0.818981 --burn 66666 --exp N7 --kind var --kw 4 --
 python revsim.py cell --beta 0.818981 --burn 66666 --exp N7 --kind var --kw 4 --method past --p 0.0004 --sin-every 1 --seeds 5-9 --null --total-timesteps 1333335
 python revsim.py cell --beta 0.744 --burn 66666 --exp N7 --kind var --kw 4 --method past --p 0.0004 --sin-every 1 --seeds 0-4 --null --total-timesteps 1333335
 python revsim.py cell --beta 0.744 --burn 66666 --exp N7 --kind var --kw 4 --method past --p 0.0004 --sin-every 1 --seeds 5-9 --null --total-timesteps 1333335
-python revsim.py cell --beta 0.637961 --burn 66666 --exp N7 --kind var --kw 4 --method past --p 0.0004 --sin-every 1 --seeds 0-4 --null --total-timesteps 1333335
-python revsim.py cell --beta 0.637961 --burn 66666 --exp N7 --kind var --kw 4 --method past --p 0.0004 --sin-every 1 --seeds 5-9 --null --total-timesteps 1333335
-python revsim.py cell --beta 0.488 --burn 66666 --exp N7 --kind var --kw 4 --method past --p 0.0004 --sin-every 1 --seeds 0-4 --null --total-timesteps 1333335
-python revsim.py cell --beta 0.488 --burn 66666 --exp N7 --kind var --kw 4 --method past --p 0.0004 --sin-every 1 --seeds 5-9 --null --total-timesteps 1333335
 python revsim.py cell --burn 33333 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0008 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 666665
 python revsim.py cell --burn 33333 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0008 --sched const --sin-every 1 --seeds 5-9 --null --total-timesteps 666665
 python revsim.py cell --burn 33333 --eta 0.0085 --exp N7 --kind var --kw 4 --method oja --p 0.0008 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 666665
@@ -515,10 +503,6 @@ python revsim.py cell --beta 0.818981 --burn 33333 --exp N7 --kind var --kw 4 --
 python revsim.py cell --beta 0.818981 --burn 33333 --exp N7 --kind var --kw 4 --method past --p 0.0008 --sin-every 1 --seeds 5-9 --null --total-timesteps 666665
 python revsim.py cell --beta 0.744 --burn 33333 --exp N7 --kind var --kw 4 --method past --p 0.0008 --sin-every 1 --seeds 0-4 --null --total-timesteps 666665
 python revsim.py cell --beta 0.744 --burn 33333 --exp N7 --kind var --kw 4 --method past --p 0.0008 --sin-every 1 --seeds 5-9 --null --total-timesteps 666665
-python revsim.py cell --beta 0.637961 --burn 33333 --exp N7 --kind var --kw 4 --method past --p 0.0008 --sin-every 1 --seeds 0-4 --null --total-timesteps 666665
-python revsim.py cell --beta 0.637961 --burn 33333 --exp N7 --kind var --kw 4 --method past --p 0.0008 --sin-every 1 --seeds 5-9 --null --total-timesteps 666665
-python revsim.py cell --beta 0.488 --burn 33333 --exp N7 --kind var --kw 4 --method past --p 0.0008 --sin-every 1 --seeds 0-4 --null --total-timesteps 666665
-python revsim.py cell --beta 0.488 --burn 33333 --exp N7 --kind var --kw 4 --method past --p 0.0008 --sin-every 1 --seeds 5-9 --null --total-timesteps 666665
 python revsim.py cell --burn 16666 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0016 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 333335
 python revsim.py cell --burn 16666 --eta 0.006 --exp N7 --kind var --kw 4 --method oja --p 0.0016 --sched const --sin-every 1 --seeds 5-9 --null --total-timesteps 333335
 python revsim.py cell --burn 16666 --eta 0.0085 --exp N7 --kind var --kw 4 --method oja --p 0.0016 --sched const --sin-every 1 --seeds 0-4 --null --total-timesteps 333335
@@ -645,7 +629,3 @@ python revsim.py cell --beta 0.818981 --burn 16666 --exp N7 --kind var --kw 4 --
 python revsim.py cell --beta 0.818981 --burn 16666 --exp N7 --kind var --kw 4 --method past --p 0.0016 --sin-every 1 --seeds 5-9 --null --total-timesteps 333335
 python revsim.py cell --beta 0.744 --burn 16666 --exp N7 --kind var --kw 4 --method past --p 0.0016 --sin-every 1 --seeds 0-4 --null --total-timesteps 333335
 python revsim.py cell --beta 0.744 --burn 16666 --exp N7 --kind var --kw 4 --method past --p 0.0016 --sin-every 1 --seeds 5-9 --null --total-timesteps 333335
-python revsim.py cell --beta 0.637961 --burn 16666 --exp N7 --kind var --kw 4 --method past --p 0.0016 --sin-every 1 --seeds 0-4 --null --total-timesteps 333335
-python revsim.py cell --beta 0.637961 --burn 16666 --exp N7 --kind var --kw 4 --method past --p 0.0016 --sin-every 1 --seeds 5-9 --null --total-timesteps 333335
-python revsim.py cell --beta 0.488 --burn 16666 --exp N7 --kind var --kw 4 --method past --p 0.0016 --sin-every 1 --seeds 0-4 --null --total-timesteps 333335
-python revsim.py cell --beta 0.488 --burn 16666 --exp N7 --kind var --kw 4 --method past --p 0.0016 --sin-every 1 --seeds 5-9 --null --total-timesteps 333335
