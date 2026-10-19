@@ -55,7 +55,7 @@ the simulations.
 
 ## Rerunning the simulations
 
-Every sweep file can be regenerated with `python3 revsim.py sweeps --set {revision,null,n2,n45,n6,n7}`.
+Every sweep file can be regenerated with `python3 revsim.py sweeps --set {revision,null,n2,n45,n6,n7,n7b,n8}`.
 Run each line as a separate job with `RUN_DIR` set to an empty folder; the line writes
 `results.jsonl` there. Any job scheduler works. The full set is about 300 core-hours.
 
@@ -99,3 +99,18 @@ N7b (`sweeps/N7b_varrank_rep.txt`, which replays N7 exactly and records those co
 
     python3 n7_selection.py results/ n7_rep/ N7   && python3 null_analyze.py n7_rep  --max-p 2e-3
     python3 n7_selection.py results/ n7b_rep/ N7b && python3 null_analyze.py n7b_rep --max-p 2e-3
+
+## N8: online tuning
+
+`sweeps/N8_online.txt` (`python3 revsim.py sweeps --set n8`) asks whether a radio that does not know
+the change rate can use the fitted laws as a tuning rule. Oja's step follows the N1 law of the
+target cost, eta = law_eta (p_hat / 2e-4)^law_a, with p_hat updated every slot from the last ten
+detected changes. Three rate estimators: `known` (the true rate), `genie` (true change instants)
+and `blind` (no steering vectors, occupancy or rate: a fast auxiliary Oja tracker with step 0.1
+and a one-sided CUSUM on its standardized residual energy, threshold 12, hold-off 150 slots). The
+arrays (seeds 20-29) were not used to fit the laws. Rules are compared with the constant-step grid
+on the same arrays at fixed rates 1e-4, 4e-4 and 1.6e-3, and with a rate that switches between
+1e-4 and 1.6e-3 every 300,000 slots (the best constant step in hindsight, and the best constant
+step for each regime separately).
+
+    python3 n8_analyze.py results/

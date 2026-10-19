@@ -74,8 +74,13 @@ def make_steering(r, M, K, array):
 class Env:
     """Constant rank (swap) or variable rank (independent on/off) occupancy."""
 
-    def __init__(self, kind, M, K, k, p, snr, seed, array="gauss", p01=1.2e-4, p10=1.6e-4):
+    def __init__(self, kind, M, K, k, p, snr, seed, array="gauss", p01=1.2e-4, p10=1.6e-4,
+                 p_hi=None, dwell=None, burn=0):
         self.kind, self.M, self.K, self.k, self.p, self.snr = kind, M, K, k, p, snr
+        # N8 rate switching (swap occupancy only): rate p during burn-in, then regimes of `dwell`
+        # slots alternating p, p_hi, p, p_hi, ...  Without p_hi the environment is unchanged.
+        self.p_lo, self.p_hi, self.dwell, self.burn0, self.t = p, p_hi, dwell, burn, 0
+        self.regime = 0
         self.array, self.p01, self.p10 = array, p01, p10
         self.r = np.random.default_rng(seed)
         self.S = make_steering(self.r, M, K, array)
@@ -101,6 +106,10 @@ class Env:
     def step(self):
         r, changed = self.r, False
         if self.kind == "swap":
+            if self.p_hi is not None:
+                self.t += 1
+                self.regime = 0 if self.t <= self.burn0 else ((self.t - self.burn0 - 1) // self.dwell) % 2
+                self.p = self.p_hi if self.regime else self.p_lo
             if r.random() < self.p:
                 idle = [c for c in range(self.K) if c not in self.act]
                 out = r.integers(len(self.act)); inn = idle[r.integers(len(idle))]
@@ -121,6 +130,50 @@ class Env:
     def cbar(self):
         Sa = self.S[:, self.act]
         return self.snr * Sa @ Sa.conj().T + np.eye(self.M)
+
+
+# ------------------------------------------------------------------ change-rate estimation (N8)
+class RateEstimator:
+    """Online estimate of the change probability per slot.
+    mode 'known' : the true current rate (a genie that knows p).
+    mode 'genie' : true change instants, N-interval window (estimation noise only).
+    mode 'blind' : no knowledge of steering vectors, occupancy or p: a fast auxiliary Oja tracker
+                   (step eta_d) and a one-sided CUSUM on its standardized residual energy
+                   ||y||^2 - ||W^H y||^2; one alarm per detection, then a hold-off.
+    With fewer than N events the estimate shrinks toward the prior p0 (pseudo-count n0)."""
+
+    def __init__(self, mode, M, k, snr, cplx, seed, N=10, p0=2e-4, n0=2.0,
+                 eta_d=0.1, h=12.0, kc=0.5, hold=150, warm=3000):
+        self.mode, self.N, self.p0, self.n0 = mode, N, p0, n0
+        self.times, self.t = [], 0
+        if mode == "blind":
+            self.aux = Oja(M, k, snr * k + M, np.random.default_rng(seed + 555), cplx, eta=eta_d)
+            self.mu, self.var, self.S, self.last = float(M - k), 2.0 * (M - k), 0.0, -10 ** 9
+            self.h, self.kc, self.hold, self.warm = h, kc, hold, warm
+
+    def update(self, y, changed, env):
+        self.t += 1
+        if self.mode == "known":
+            return env.p
+        if self.mode == "genie":
+            if changed:
+                self.times.append(self.t)
+        else:
+            self.aux.update(y, changed, env)
+            W = self.aux.W
+            e = float(np.real(y.conj() @ y) - np.sum(np.abs(W.conj().T @ y) ** 2))
+            if self.t < self.warm:
+                self.mu += 0.01 * (e - self.mu); self.var += 0.01 * ((e - self.mu) ** 2 - self.var)
+            elif self.t - self.last >= self.hold:
+                self.S = max(0.0, self.S + (e - self.mu) / np.sqrt(self.var) - self.kc)
+                if self.S > self.h:
+                    self.times.append(self.t); self.S = 0.0; self.last = self.t
+                else:
+                    self.mu += 1e-3 * (e - self.mu); self.var += 1e-3 * ((e - self.mu) ** 2 - self.var)
+        n = len(self.times)
+        if n >= self.N:      # (N-1)/(time spanned by the last N events): unbiased for Poisson events
+            return (self.N - 1) / max(self.t - self.times[-self.N], 1)
+        return (n + self.n0) / (self.t + self.n0 / self.p0)
 
 
 # ------------------------------------------------------------------ trackers
@@ -254,6 +307,8 @@ def run(job, outdir=None, progress=None):
         # (E7 has no "p" key and keeps the original fixed rates.)
         pi1 = k / K; pi0 = 1 - pi1; c = p / (2 * K * pi0 * pi1)
         vr = dict(p01=c * pi1, p10=c * pi0)
+    if j.get("p_hi") is not None:
+        vr = dict(p_hi=j["p_hi"], dwell=j["dwell"], burn=j.get("burn", T // 4))
     env = Env(kind, M, K, k, p, snr, seed + off, array, **vr)
     cplx = env.cplx
     kw = j.get("kw", k)
@@ -276,6 +331,14 @@ def run(job, outdir=None, progress=None):
         trk = Beamformer(env.S, beta=j["beta"])
     else:
         raise ValueError(method)
+    # N8: step from a tuning law, eta = law_eta * (p_hat / law_pref)^law_a, p_hat estimated online
+    rate = None
+    if j.get("rate"):
+        rate = RateEstimator(j["rate"], M, k, snr, cplx, seed, N=j.get("rate_n", 10))
+        law_eta, law_a, law_pref = j["law_eta"], j["law_a"], j.get("law_pref", 2e-4)
+        log_eta_sum, log_ratio_sum, log_ratio_sq, n_alarm_eval = 0.0, 0.0, 0.0, 0
+    switching = j.get("p_hi") is not None
+    racc = {0: np.zeros(9), 1: np.zeros(9)}    # n, sin, I, out*3, rew, orew, coll   (per regime)
 
     S, SH = env.S, env.S.conj().T
     ocache = {}
@@ -302,12 +365,20 @@ def run(job, outdir=None, progress=None):
         if progress and t % every == 0:
             progress(t)
         y, ch = env.step()
+        if rate is not None:
+            n_before = len(rate.times)
+            p_hat = rate.update(y, ch, env)
+            trk.eta = float(np.clip(law_eta * (p_hat / law_pref) ** law_a, 0.003, 4.0))
         tu = time.perf_counter()
         trk.update(y, ch, env)
         t_upd += time.perf_counter() - tu
         if t <= burn:
             continue
         n_eval += 1
+        if rate is not None:
+            lr = np.log(p_hat / env.p)
+            log_eta_sum += np.log(trk.eta); log_ratio_sum += lr; log_ratio_sq += lr * lr
+            n_alarm_eval += len(rate.times) - n_before
         n_jumps += int(ch)
         act = env.act
         if method == "bf":
@@ -323,6 +394,7 @@ def run(job, outdir=None, progress=None):
                     int(np.sum(colpow > j.get("rank_thr", 1.0 + snr / 4)))
                 B = B[:, order[:r_use]]
             sc = np.sum(np.abs(B.conj().T @ S) ** 2, axis=0) if B.shape[1] else np.zeros(K)
+        It = None
         if null and B is not None:
             w = h - B @ (B.conj().T @ h)
             w = w / np.linalg.norm(w)
@@ -343,12 +415,19 @@ def run(job, outdir=None, progress=None):
         coll += int(hit)
         if kind == "var":
             d = byrank.setdefault(len(act), [0, 0]); d[0] += 1; d[1] += int(hit)
+        if switching:
+            a_ = racc[env.regime]; a_[0] += 1; a_[6] += -2.0 if hit else 1.0
+            a_[7] += -2.0 if ohit else 1.0; a_[8] += int(hit)
+            if It is not None:
+                a_[2] += It; a_[3:6] += [It > g for g in GAMS]
         if kind == "var" and sin_every and B is not None and (n_eval % sin_every == 0):
             s = sin_cover(env.subspace(), Bfull)
             if np.isfinite(s):
                 sins.append(s); above_c += int(s > 0.95)
         elif sin_every and B is not None and (n_eval % sin_every == 0):
             s = sin_theta(B, env.subspace())
+            if switching:
+                racc[env.regime][1] += s
             sins.append(s)
             above_g += int(s > gmin); above_c += int(s > 0.95)
             if trace:
@@ -372,6 +451,17 @@ def run(job, outdir=None, progress=None):
         if kind == "var" and n_rep:
             res.update(I_mean_rep=nI_rep / n_rep, n_rep=n_rep,
                        **{f"out_{g}_rep": float(o / n_rep) for g, o in zip(GAMS, nout_rep)})
+    if rate is not None:
+        res.update(eta_geo=float(np.exp(log_eta_sum / n_eval)),
+                   phat_logbias=log_ratio_sum / n_eval,
+                   phat_logsd=float(np.sqrt(max(log_ratio_sq / n_eval - (log_ratio_sum / n_eval) ** 2, 0))),
+                   alarms_eval=n_alarm_eval)
+    if switching:
+        for g, a_ in racc.items():
+            nn = max(a_[0], 1)
+            res[f"reg{g}"] = dict(n=int(a_[0]), sin_mean=a_[1] / nn, I_mean=a_[2] / nn,
+                                  **{f"out_{x}": a_[3 + i] / nn for i, x in enumerate(GAMS)},
+                                  gap=(a_[7] - a_[6]) / nn, coll_rate=a_[8] / nn)
     if byrank:
         res["coll_by_rank"] = {str(rk): v[1] / v[0] for rk, v in sorted(byrank.items())}
         res["slots_by_rank"] = {str(rk): v[0] for rk, v in sorted(byrank.items())}
@@ -587,6 +677,40 @@ def build_n7_jobs(nseeds=10, scale=1.0, exp="N7"):
     return J
 
 
+# N8: online tuning. The step follows the fitted N1 law of the target cost,
+#     eta = law_eta * (p_hat / 2e-4)^law_a, with p_hat from RateEstimator ('known', 'genie', 'blind').
+#     Fresh arrays (seeds 20-29, not used to fit the laws). Part A: fixed rates, against the
+#     constant-step grid on the same arrays. Part B: the rate switches 1e-4 <-> 1.6e-3 every
+#     `dwell` slots, against the best constant step in hindsight.
+N8_LAWS = {"sin_mean": (0.03640, 0.6104), "I_mean": (0.05462, 0.4811), "out_0.01": (0.05367, 0.2073),
+           "out_0.03": (0.11414, 0.1677), "out_0.1": (0.25398, 0.1241), "gap": (1.06633, 0.0937)}
+N8_RATES = [1e-4, 4e-4, 1.6e-3]
+
+
+def build_n8_jobs(nseeds=10, scale=1.0, seed0=20, dwell=300_000, rates=None, targets=None,
+                  modes=("known", "genie", "blind"), etas=None):
+    J = []
+    seeds = range(seed0, seed0 + nseeds)
+    etas = etas or N7_ETAS                              # 0.006 .. 3.072, x sqrt2
+    targets = targets or list(N8_LAWS)
+    D = int(dwell * scale)
+    settings = [dict(p=p, T=int(round(80 / p / 0.75 * scale)))
+                for p in (N8_RATES if rates is None else rates)]
+    settings.append(dict(p=1e-4, p_hi=1.6e-3, dwell=D, burn=D // 2, T=D // 2 + 4 * D))
+    for st in settings:
+        for s in seeds:
+            for e in etas:
+                J.append(dict(exp="N8", method="oja", sched="const", eta=e, seed=s, null=True, **st))
+            for tg in targets:
+                le, la = N8_LAWS[tg]
+                for md in modes:
+                    J.append(dict(exp="N8", method="oja", sched="const", eta=le, rate=md, target=tg,
+                                  law_eta=le, law_a=la, seed=s, null=True, **st))
+    for i, x in enumerate(J):
+        x["id"] = f"N8_{i:05d}"; x["cost"] = x["T"] * (1.3 if x.get("rate") == "blind" else 1.0)
+    return J
+
+
 # ------------------------------------------------------------------ geometry dump
 def swap_geometry(S, k, snr, ngrid=400):
     """Per swap triple: initial angle theta0 and the collision indicator along the
@@ -645,6 +769,7 @@ def geometry(nseeds, out, M=16, K=6, k=2, snr=8.0, array="gauss"):
 # --total-timesteps is the summed horizon and "step N" lines report cumulative progress, which
 # is exactly what lab.sh's migration logic reads to compare runs asking for the same work.
 FLAGS = dict(exp=str, kind=str, method=str, sched=str, driver=str, array=str, rankmode=str,
+             rate=str, target=str, law_eta=float, law_a=float, p_hi=float, dwell=int, rate_n=int,
              eta=float, eta0=float, floor=float, fa=float, beta=float, p=float, snr=float,
              rank_thr=float, delay=int, M=int, K=int, k=int, kw=int, sin_every=int, burn=int)
 
@@ -682,6 +807,7 @@ def cell(a):
 
 
 QUESTIONS = {
+    "N8": "Can a radio that does not know the change rate set its step online from the fitted law, and how close does it get to the best constant step (fixed and switching rates)?",
     "N7b": "Under variable rank, where are the outage optima on slots the tracker can fully null (at most kw active users)?",
     "N7": "Do the tuning laws hold under variable-rank occupancy (independent on/off users, births and departures), for all three trackers?",
     "N6": "Do the tuning laws and the theory's predictions hold with three active users (k = 3)?",
@@ -699,7 +825,7 @@ QUESTIONS = {
     "E8": "Across array type, SNR and M, is there any regime where Oja tracking beats the beamformer baseline?",
 }
 BOOL_FLAGS = ("trace", "null")
-NAMES = dict(N7b="N7b_varrank_rep", N7="N7_varrank", N6="N6_k3", N4="N4_ula", N5="N5_snr", N2="N2_trackers", N3="N3_scale", N1="N1_tuning_law", E1="E1_baselines", E2="E2_resets", E3="E3_stepsweep", E5="E5_excursions",
+NAMES = dict(N8="N8_online", N7b="N7b_varrank_rep", N7="N7_varrank", N6="N6_k3", N4="N4_ula", N5="N5_snr", N2="N2_trackers", N3="N3_scale", N1="N1_tuning_law", E1="E1_baselines", E2="E2_resets", E3="E3_stepsweep", E5="E5_excursions",
              E6="E6_decay", E7="E7_varrank", E8="E8_realism")
 
 
@@ -806,7 +932,7 @@ if __name__ == "__main__":
     sw = sub.add_parser("sweeps"); sw.add_argument("--seeds", type=int, default=20)
     sw.add_argument("--scale", type=float, default=1.0)
     sw.add_argument("--out", default="sweeps")
-    sw.add_argument("--set", choices=["revision", "null", "n2", "n45", "n6", "n7", "n7b"], default="revision")
+    sw.add_argument("--set", choices=["revision", "null", "n2", "n45", "n6", "n7", "n7b", "n8"], default="revision")
     sw.add_argument("--per-line", dest="per_line", type=int, default=None)
     g = sub.add_parser("geometry"); g.add_argument("--seeds", type=int, default=20)
     g.add_argument("--out", default="geometry.json")
@@ -823,7 +949,9 @@ if __name__ == "__main__":
     elif a.cmd == "cell":
         cell(a)
     elif a.cmd == "sweeps":
-        if a.set == "n7b":
+        if a.set == "n8":
+            write_sweeps(build_n8_jobs(a.seeds if a.seeds != 20 else 10, a.scale), a.out, a.per_line or 5)
+        elif a.set == "n7b":
             write_sweeps(build_n7_jobs(a.seeds if a.seeds != 20 else 10, a.scale, exp="N7b"), a.out,
                          a.per_line or 5)
         elif a.set == "n7":

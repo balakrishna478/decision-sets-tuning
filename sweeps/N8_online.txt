@@ -1,0 +1,297 @@
+# question: Can a radio that does not know the change rate set its step online from the fitted law, and how close does it get to the best constant step (fixed and switching rates)?
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.006 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.006 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0085 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0085 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.012 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.012 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.017 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.017 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.024 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.024 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0339 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0339 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.048 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.048 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0679 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0679 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.096 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.096 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.1358 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.1358 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.192 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.192 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.2715 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.2715 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.384 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.384 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.5431 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.5431 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.768 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.768 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.0861 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.0861 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.536 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.536 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 2.1722 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 2.1722 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 3.072 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 3.072 --exp N8 --method oja --p 0.0001 --p-hi 0.0016 --sched const --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target I_mean --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target I_mean --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target I_mean --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target I_mean --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target I_mean --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target I_mean --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target gap --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --p-hi 0.0016 --rate known --sched const --target gap --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target gap --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --p-hi 0.0016 --rate genie --sched const --target gap --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target gap --seeds 20-24 --null --total-timesteps 6750000
+python revsim.py cell --burn 150000 --dwell 300000 --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --p-hi 0.0016 --rate blind --sched const --target gap --seeds 25-29 --null --total-timesteps 6750000
+python revsim.py cell --eta 0.006 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.006 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0085 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0085 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.012 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.012 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.017 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.017 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.024 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.024 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0339 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0339 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.048 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.048 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0679 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0679 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.096 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.096 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.1358 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.1358 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.192 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.192 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.2715 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.2715 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.384 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.384 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.5431 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.5431 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.768 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.768 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.0861 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.0861 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.536 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.536 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 2.1722 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 2.1722 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 3.072 --exp N8 --method oja --p 0.0001 --sched const --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 3.072 --exp N8 --method oja --p 0.0001 --sched const --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --rate known --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --rate known --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --rate genie --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --rate genie --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --rate blind --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0001 --rate blind --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --rate known --sched const --target I_mean --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --rate known --sched const --target I_mean --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --rate genie --sched const --target I_mean --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --rate genie --sched const --target I_mean --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --rate blind --sched const --target I_mean --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0001 --rate blind --sched const --target I_mean --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --rate known --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --rate known --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --rate genie --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --rate genie --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --rate blind --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0001 --rate blind --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --rate known --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --rate known --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --rate genie --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --rate genie --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --rate blind --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0001 --rate blind --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --rate known --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --rate known --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --rate genie --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --rate genie --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --rate blind --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0001 --rate blind --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --rate known --sched const --target gap --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --rate known --sched const --target gap --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --rate genie --sched const --target gap --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --rate genie --sched const --target gap --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --rate blind --sched const --target gap --seeds 20-24 --null --total-timesteps 5333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0001 --rate blind --sched const --target gap --seeds 25-29 --null --total-timesteps 5333335
+python revsim.py cell --eta 0.006 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.006 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0085 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0085 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.012 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.012 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.017 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.017 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.024 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.024 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0339 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0339 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.048 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.048 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0679 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0679 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.096 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.096 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.1358 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.1358 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.192 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.192 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.2715 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.2715 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.384 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.384 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.5431 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.5431 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.768 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.768 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.0861 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.0861 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.536 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.536 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 2.1722 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 2.1722 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 3.072 --exp N8 --method oja --p 0.0004 --sched const --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 3.072 --exp N8 --method oja --p 0.0004 --sched const --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0004 --rate known --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0004 --rate known --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0004 --rate genie --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0004 --rate genie --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0004 --rate blind --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0004 --rate blind --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0004 --rate known --sched const --target I_mean --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0004 --rate known --sched const --target I_mean --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0004 --rate genie --sched const --target I_mean --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0004 --rate genie --sched const --target I_mean --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0004 --rate blind --sched const --target I_mean --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0004 --rate blind --sched const --target I_mean --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0004 --rate known --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0004 --rate known --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0004 --rate genie --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0004 --rate genie --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0004 --rate blind --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0004 --rate blind --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0004 --rate known --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0004 --rate known --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0004 --rate genie --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0004 --rate genie --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0004 --rate blind --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0004 --rate blind --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0004 --rate known --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0004 --rate known --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0004 --rate genie --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0004 --rate genie --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0004 --rate blind --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0004 --rate blind --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0004 --rate known --sched const --target gap --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0004 --rate known --sched const --target gap --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0004 --rate genie --sched const --target gap --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0004 --rate genie --sched const --target gap --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0004 --rate blind --sched const --target gap --seeds 20-24 --null --total-timesteps 1333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0004 --rate blind --sched const --target gap --seeds 25-29 --null --total-timesteps 1333335
+python revsim.py cell --eta 0.006 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.006 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0085 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0085 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.012 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.012 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.017 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.017 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.024 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.024 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0339 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0339 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.048 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.048 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0679 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0679 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.096 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.096 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.1358 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.1358 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.192 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.192 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.2715 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.2715 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.384 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.384 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.5431 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.5431 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.768 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.768 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 1.0861 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 1.0861 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 1.536 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 1.536 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 2.1722 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 2.1722 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 3.072 --exp N8 --method oja --p 0.0016 --sched const --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 3.072 --exp N8 --method oja --p 0.0016 --sched const --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0016 --rate known --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0016 --rate known --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0016 --rate genie --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0016 --rate genie --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0016 --rate blind --sched const --target sin_mean --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.0364 --exp N8 --law-a 0.6104 --law-eta 0.0364 --method oja --p 0.0016 --rate blind --sched const --target sin_mean --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0016 --rate known --sched const --target I_mean --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0016 --rate known --sched const --target I_mean --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0016 --rate genie --sched const --target I_mean --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0016 --rate genie --sched const --target I_mean --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0016 --rate blind --sched const --target I_mean --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05462 --exp N8 --law-a 0.4811 --law-eta 0.05462 --method oja --p 0.0016 --rate blind --sched const --target I_mean --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0016 --rate known --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0016 --rate known --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0016 --rate genie --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0016 --rate genie --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0016 --rate blind --sched const --target out_0.01 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.05367 --exp N8 --law-a 0.2073 --law-eta 0.05367 --method oja --p 0.0016 --rate blind --sched const --target out_0.01 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0016 --rate known --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0016 --rate known --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0016 --rate genie --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0016 --rate genie --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0016 --rate blind --sched const --target out_0.03 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.11414 --exp N8 --law-a 0.1677 --law-eta 0.11414 --method oja --p 0.0016 --rate blind --sched const --target out_0.03 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0016 --rate known --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0016 --rate known --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0016 --rate genie --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0016 --rate genie --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0016 --rate blind --sched const --target out_0.1 --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 0.25398 --exp N8 --law-a 0.1241 --law-eta 0.25398 --method oja --p 0.0016 --rate blind --sched const --target out_0.1 --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0016 --rate known --sched const --target gap --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0016 --rate known --sched const --target gap --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0016 --rate genie --sched const --target gap --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0016 --rate genie --sched const --target gap --seeds 25-29 --null --total-timesteps 333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0016 --rate blind --sched const --target gap --seeds 20-24 --null --total-timesteps 333335
+python revsim.py cell --eta 1.06633 --exp N8 --law-a 0.0937 --law-eta 1.06633 --method oja --p 0.0016 --rate blind --sched const --target gap --seeds 25-29 --null --total-timesteps 333335
