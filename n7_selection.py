@@ -7,23 +7,27 @@ seed make the selection optimum unstable. On slots with at most kw active users 
 collides, so the gap there is 3 x the tracker's collision rate. This writes a copy of the N7
 results with `gap` replaced by that quantity; null_analyze.py then fits it as usual.
 
-  python3 n7_selection.py results/ n7_rep/         # reads results/N7_varrank_*/results.jsonl
-  python3 null_analyze.py n7_rep --max-p 2e-3      # 'argmin collisions' = representable slots
+  python3 n7_selection.py results/ n7_rep/ N7      # accuracy and selection (Table III, var. rows)
+  python3 null_analyze.py n7_rep --max-p 2e-3
 
-N7b results also carry I_mean_rep and out_*_rep (null-steering costs on the same slots); for those,
-the copy uses them in place of I_mean and out_* as well:
-  python3 n7_selection.py results/ n7b_rep/        # picks up N7b_varrank_rep_*/results.jsonl too
+N7b replays N7 exactly and also records I_mean_rep and out_*_rep (null-steering costs on the same
+slots); for N7b the copy uses those in place of I_mean and out_* as well:
+  python3 n7_selection.py results/ n7b_rep/ N7b    # interference and outage (Table III, var. rows)
+  python3 null_analyze.py n7b_rep --max-p 2e-3
+
+The third argument picks one experiment, so N7 and N7b never mix in one group.
 """
 import glob, json, os, sys
 
 src, dst = sys.argv[1], sys.argv[2]
+exp = sys.argv[3] if len(sys.argv) > 3 else "N7"
 os.makedirs(os.path.join(dst, "N7"), exist_ok=True)
 n = 0
 with open(os.path.join(dst, "N7", "results.jsonl"), "w") as out:
     for fn in glob.glob(os.path.join(src, "*", "results.jsonl")) + glob.glob(os.path.join(src, "*.jsonl")):
         for line in open(fn):
             r = json.loads(line)
-            if r.get("exp") not in ("N7", "N7b") or "error" in r:
+            if r.get("exp") != exp or "error" in r:
                 continue
             kw, sb, cb = r.get("kw", 4), r["slots_by_rank"], r["coll_by_rank"]
             rep = [k for k in sb if int(k) <= kw]
@@ -33,4 +37,4 @@ with open(os.path.join(dst, "N7", "results.jsonl"), "w") as out:
                 for g in ("0.01", "0.03", "0.1"):
                     r[f"out_{g}"] = r[f"out_{g}_rep"]
             out.write(json.dumps(r) + "\n"); n += 1
-print(f"{n} N7 runs rescored -> {dst}/N7/results.jsonl")
+print(f"{n} {exp} runs rescored -> {dst}/N7/results.jsonl")

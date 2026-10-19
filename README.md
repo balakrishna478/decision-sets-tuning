@@ -92,6 +92,10 @@ into the tracked one. E7 (no `--p`) keeps its original fixed rates and reproduce
 
 Analyse with `python3 null_analyze.py --max-p 2e-3`; N7 results appear as groups ending in `:var4`.
 
-Selection under variable rank is scored on slots with at most four active users
-(`python3 n7_selection.py results/ n7_rep/`, then `python3 null_analyze.py n7_rep --max-p 2e-3`):
-in the remaining slots collisions are partly unavoidable whatever the step.
+Under variable rank every decision cost is scored on slots with at most four active users, where
+the tracker can null all active users; in the others collisions and interference are partly
+unavoidable whatever the step. Accuracy and selection come from N7, interference and outage from
+N7b (`sweeps/N7b_varrank_rep.txt`, which replays N7 exactly and records those costs per slot type):
+
+    python3 n7_selection.py results/ n7_rep/ N7   && python3 null_analyze.py n7_rep  --max-p 2e-3
+    python3 n7_selection.py results/ n7b_rep/ N7b && python3 null_analyze.py n7b_rep --max-p 2e-3
